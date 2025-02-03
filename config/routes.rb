@@ -1,12 +1,11 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root to: redirect('/movie')
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
-  get 'up' => 'rails/health#show', as: :rails_health_check
+  # Route for the Movie page
+  get '/movie', to: 'pages#movie', as: 'movie'
 
-  # Defines the root path route ("/")
-  # root "posts#index"
+  # Route for the Review PAge
+  get '/review', to: 'pages#review', as: 'review'
 end
